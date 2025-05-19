@@ -39,7 +39,7 @@
                     <a href="#" class="text-sm text-blue-500 hover:underline">Forgot Password?</a>
                 </div>
 
-                <button type="sub mit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-200">LOGIN</button>
+                <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-200">LOGIN</button>
             </form>
         </div>
     </div>
