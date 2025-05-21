@@ -1,7 +1,7 @@
 <?php
 session_start();
 $name=$_SESSION['name'];
-$role=$_SESSION['role'];
+$department=$_SESSION['department'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,7 @@ $role=$_SESSION['role'];
     <div class="flex items-center gap-8">
         <div class="text-right">
             <p class="font-semibold"><?= $name ?></p>
-            <p class="text-sm text-blue-200"><?= $role ?></p>
+            <p class="text-sm text-blue-200"><?= $department ?></p>
         </div>
         <div class="w-10 h-10 bg-gray-400 items-center justify-center flex rounded-full">
             <span >JW</span>
