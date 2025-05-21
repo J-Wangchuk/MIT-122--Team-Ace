@@ -23,6 +23,7 @@ if ($user = $result->fetch_assoc()) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['name'] = $employee['name'];
         $_SESSION['email'] = $user['email'];
+        $_SESSION['role'] = $user['role'];
         $_SESSION['department'] = $employee['department'];
         header("Location: ../index.php");
         exit;
