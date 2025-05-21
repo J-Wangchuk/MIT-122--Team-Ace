@@ -3,7 +3,6 @@ include '../includes/db.php';
 session_start();
 $email = $_POST['email'];
 $password = md5($_POST['password']);
-echo "<script>console.log('Password (MD5): " . $password . "');</script>";
 
 $query = "SELECT * FROM users WHERE email = ?";
 $stmt = $conn->prepare($query);
@@ -13,7 +12,17 @@ $result = $stmt->get_result();
 
 if ($user = $result->fetch_assoc()) {
     if (($password === $user['password'])) {
+        
+        $getEmployee = "SELECT * FROM employees WHERE email = ?";
+        $stmt2 = $conn->prepare($getEmployee);
+        $stmt2->bind_param("s", $email);
+        $stmt2->execute();
+        $employeeResult = $stmt2->get_result();
+        $employee = $employeeResult->fetch_assoc();
+
         $_SESSION['user_id'] = $user['id'];
+        $_SESSION['name'] = $employee['name'];
+        $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['role'];
         header("Location: ../index.php");
         exit;

@@ -1,11 +1,12 @@
 <?php
 session_start();
+$name=$_SESSION['name'];
+$role=$_SESSION['role'];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Leave Management</title>
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <nav class="bg-blue-800 text-white p-4 flex items-center justify-between">
@@ -22,8 +23,8 @@ session_start();
     </div>
     <div class="flex items-center gap-8">
         <div class="text-right">
-            <p class="font-semibold">Jigme Wangchuk</p>
-            <p class="text-sm text-blue-200">Designer</p>
+            <p class="font-semibold"><?= $name ?></p>
+            <p class="text-sm text-blue-200"><?= $role ?></p>
         </div>
         <div class="w-10 h-10 bg-gray-400 items-center justify-center flex rounded-full">
             <span >JW</span>
