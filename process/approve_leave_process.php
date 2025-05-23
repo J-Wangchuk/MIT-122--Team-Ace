@@ -8,7 +8,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 
  if (isset($_POST['leave_id']) && is_numeric($_POST['leave_id'])) {
     $leave_id = intval($_POST['leave_id']);
-a    $status = $_POST['status'];
+    $status = $_POST['status'];
 
     $query = "UPDATE leave_requests SET status = ? WHERE id = ?";
     $stmt = $conn->prepare($query);
