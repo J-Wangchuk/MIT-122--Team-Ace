@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+echo $_SESSION['role'];
 if (isset($_SESSION['user_id'])) {
     if ($_SESSION['role'] === 'admin') {
         header("Location: /MIT-122--Team-Ace/pages/admin_dashboard.php");

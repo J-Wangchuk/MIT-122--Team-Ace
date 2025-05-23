@@ -6,22 +6,23 @@ $department=$_SESSION['department'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leave Management</title>
+    <title>elms - leave_requests</title>
 </head>
 <body>
 <nav class="bg-blue-800 text-white p-4 flex items-center justify-between">
     <img src="../assets/elms-logo.png" alt="ELMS Logo" class="w-64 mb-6 flex items-center">
     <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') { ?>
-        <a href="/pages/admin_leave_requests.php">Leave Requests</a>
-        <a href="/pages/admin_employees.php">Employees</a>
-        <a href="../pages/profile.php">Profile</a>
+        <a href="../pages/admin_dashboard.php" class="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">Leave Requests</a>
+        <a href="../pages/admin_employees.php" class="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">Employees</a>
+        <a href="../pages/profile.php" class="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">Profile</a>
     <?php } else { ?>
     <div class="flex items-center gap-4">
             <a href="../pages/dashboard.php" class="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">MY LEAVE</a>
-            <a href="../pages/employees.php" class="hover:underline">EMPLOYEES</a>
-            <a href="../pages/profile.php" class="hover:underline">MY PROFILE</a>
+            <a href="../pages/employees.php" class="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">EMPLOYEES</a>
+            <a href="../pages/profile.php" class="bg-blue-700 px-4 py-2 rounded hover:bg-blue-600">MY PROFILE</a>
     </div>
-    <div class="flex items-center gap-8">
+    <?php } ?>
+    <div class="flex items-center gap-8"> 
         <div class="text-right">
             <p class="font-semibold"><?= $name ?></p>
             <p class="text-sm text-blue-200"><?= $department ?></p>
@@ -36,4 +37,3 @@ $department=$_SESSION['department'];
         </a>
     </div>
 </nav>
-<?php } ?>

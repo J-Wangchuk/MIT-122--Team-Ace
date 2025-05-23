@@ -2,7 +2,7 @@
 include '../includes/db.php';
 session_start();
 $email = $_POST['email'];
-$password = md5($_POST['password']);
+$password = $_POST['password'];
 
 $query = "SELECT * FROM users WHERE email = ?";
 $stmt = $conn->prepare($query);
@@ -29,5 +29,6 @@ if ($user = $result->fetch_assoc()) {
         exit;
     }
 }
-echo "Invalid email or password";
+header("Location: ../pages/login.php?error=invalid_credentials");
+exit;
 ?>

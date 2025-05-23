@@ -41,6 +41,7 @@
 
                 <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition duration-200">LOGIN</button>
             </form>
+            <?php if (isset($_GET['error'])) { echo '<p class="text-red-500 mt-4">' . $_GET['error'] . '</p>'; } ?>
         </div>
     </div>
 </body>
